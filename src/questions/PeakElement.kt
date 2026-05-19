@@ -6,6 +6,7 @@ fun findPeakElement(nums: IntArray): Int {
     while (start < end) {
         val mid = start + (end - start) / 2
 
+        println("$mid -> ${nums[mid]}")
         if (nums[mid] > nums[mid + 1]) {
             end = mid
         } else {

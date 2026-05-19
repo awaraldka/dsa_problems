@@ -22,3 +22,17 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
     }
     return intArrayOf()
 }
+
+private fun repeatedSum(nums: IntArray, target: Int): IntArray {
+    var map = hashMapOf<Int, Int>()
+
+    for (i in nums.indices) {
+        val diff =  target - nums[i]
+        if (map.containsKey(diff)) {
+            return intArrayOf(map[diff]!!, i)
+        }
+        map[nums[i]] = i
+    }
+
+    return intArrayOf()
+}
